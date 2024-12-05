@@ -1,0 +1,277 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bgVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+header {
+    background-color: rgba(17, 17, 17, 0.8);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s, background-color 0.3s, transform 0.3s;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    color: #000;
+    background-color: #fff;
+    transform: scale(1.1);
+}
+
+.hero {
+    text-align: center;
+    padding: 5rem 1rem;
+    animation: fadeIn 2s;
+    text-shadow: 2px 2px 8px #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.intro-box, .project-box {
+    background-color: rgba(255, 255, 255, 0.02); /* Lower opacity for a darker effect */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 30%; /* Reduced width for the text box */
+    margin: auto;
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    animation: fadeIn 2s; /* Fade in effect */
+}
+
+.intro-box:hover, .project-box:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.project-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+/* Styles for the project-box images */
+.image-container {
+    display: flex;
+    justify-content: center; /* Align images side by side */
+    gap: 10px; /* Space between images */
+    margin-top: 20px; /* Adds some space between the text and the images */
+}
+
+.image-container img {
+    width: 50px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Image hover effect */
+.project-box img:hover {    
+    transform: scale(1.1); /* Slight zoom on hover */
+    transition: transform 0.3s ease;
+}
+
+/* Image container and overlay for profile image */
+.profile-image-container {
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease-in-out;
+    margin-bottom: 50px;
+    max-width: 300px; /* Max width for the profile image */
+}
+
+.profile-image {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    border-radius: 10px; /* Add some rounding to the corners */
+}
+
+.profile-image-container:hover .profile-image {
+    transform: scale(1.1); /* Make the profile image grow on hover */
+    opacity: 0.7; /* Darken the image on hover */
+}
+
+/* Overlay text */
+.overlay-text {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show overlay text on hover */
+.profile-image-container:hover .overlay-text {
+    opacity: 1; /* Show text when hovered */
+}
+
+.content {
+    padding: 2rem 1rem;
+    animation: fadeIn 2s;
+    text-shadow: 2px 2px 8px #000;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    margin-top: 1rem;
+}
+
+input, textarea, button {
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    width: 80%;
+    max-width: 500px;
+    border: none;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #444;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: rgba(17, 17, 17, 0.8);
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.contact-buttons {
+    margin-top: 1rem;
+}
+
+.contact-button {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Additional styles for the resume section */
+.resume-container {
+    width: 70%;
+    height: 80vh;
+    margin: 20px 0;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.resume-frame {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.download-button:hover {
+    background-color: #0056b3;
+}
+
+.project-link {
+    color: #00BFFF;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.project-link:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
