@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asfi's Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#certifications">Certifications</a>
+            <a href="#resume">Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1 class="fade-text">Welcome to Asfi's Portfolio</h1>
+            </div>
+            <canvas id="3d-animation"></canvas>
+        </section>
+
+        <!-- About Section -->
+        <section id="about">
+            <div class="fade-text">
+                <h2>About Me</h2>
+                <p>I’m a second year student studying Computer Science</p>
+                <p>with honours at University of Windsor. Interested in</p>
+                <p>creating dynamic web applications, solving  programming</p>
+                <p>challenges, and designing user-friendly interfaces.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <div class="fade-text">
+                <h2>Projects</h2>
+                <p>Here are some of my recent works and projects.</p>
+            </div>
+            <div class="project-cards">
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Shop westEND</h3>
+                        <p>Created a responsive e-commerce website with secure payments via Stripe, featuring product galleries and seamless checkout.</p>
+                        <a href="https://shopwestend.ca" target="_blank">View Store Page</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Socket Messaging System</h3>
+                        <p>Built a multithreaded C chat server for real-time messaging with efficient client communication and connection management.</p>
+                        <a href="https://github.com/asfihassan/Socket-Messaging-System" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Employee Management System</h3>
+                        <p>Developed a Python-based employee management tool with CRUD functionality and a menu-driven interface using SQLite.</p>
+                        <a href="https://github.com/asfihassan/Employee-Management-System" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-content">
+                        <h3>Expense Tracker</h3>
+                        <p>An Expense Tracker application to manage income, expenses, and categories, providing a clear financial summary.</p>
+                        <a href="https://github.com/asfihassan/Expense-Tracker" target="_blank">View on GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <div class="fade-text">
+                <h2>Certifications</h2>
+                <p>Here are some of my professional certifications:</p>
+                <p>
+                    <a href="cybrary-cert-cissp.pdf" target="_blank">Certificate of Continuing Education Completion (PDF)</a>
+                </p>
+                <p>
+                    <a href="certificate_of_completion_java.pdf" target="_blank">W3S Java Developer Certification (PDF)</a>
+                </p>
+                <p>
+                    <a href="certificate_of_completion_python.pdf" target="_blank">W3S Python Developer Certification (PDF)</a>
+                </p>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume">
+            <div class="fade-text">
+                <h2>Resume</h2>
+                <p>View or download my professional resume:</p>
+                <a href="resume.pdf" target="_blank" class="resume-link">Download Resume (PDF)</a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="fade-text">
+                <h2>Contact Me</h2>
+                <p>Let’s develop something amazing together. Reach out!</p>
+                <div class="contact-icons">
+                    <a href="mailto:hassan5c@uwindsor.ca">
+                        <img src="mail.png" alt="School Email" title="School Email">
+                    </a>
+                    <a href="mailto:asfihassan2005@gmail.com">
+                        <img src="gmail.png" alt="Professional Email" title="Professional Email">
+                    </a>
+                    <a href="https://www.linkedin.com/in/asfih/" target="_blank">
+                        <img src="linkedin.png" alt="LinkedIn" title="LinkedIn">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Asfi's Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>
