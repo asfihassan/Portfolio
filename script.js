@@ -1,55 +1,111 @@
+// Simple page interactions + hero 3D background
 document.addEventListener("DOMContentLoaded", () => {
-    // Text Fade-In/Out Animation
-    const fadeTexts = document.querySelectorAll('.fade-text');
-
+    /* ===== Fade-in on scroll ===== */
     const observer = new IntersectionObserver(
-        (entries) => {
-            entries.forEach((entry) => {
+        entries => {
+            entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                } else {
-                    entry.target.classList.remove('visible');
+                    entry.target.classList.add("in-view");
+                    observer.unobserve(entry.target);
                 }
             });
         },
-        { threshold: 0.1 } // Trigger when 10% of the element is visible
+        {
+            threshold: 0.12
+        }
     );
 
-    fadeTexts.forEach((text) => observer.observe(text));
+    document.querySelectorAll(".fade-text").forEach(el => observer.observe(el));
 
-    // 3D Animation with Three.js
-    const canvas = document.getElementById('3d-animation');
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const renderer = new THREE.WebGLRenderer({ canvas });
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    /* ===== three.js hero animation ===== */
+    const canvas = document.getElementById("3d-animation");
+    if (canvas && window.THREE) {
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(
+            55,
+            window.innerWidth / window.innerHeight,
+            0.1,
+            100
+        );
+        camera.position.z = 4;
 
-    // Wireframe Sphere Geometry
-    const geometry = new THREE.SphereGeometry(15, 32, 32);
-    const wireframeMaterial = new THREE.MeshBasicMaterial({
-        color: 0x00ffcc,
-        wireframe: true,
-    });
-    const wireframeSphere = new THREE.Mesh(geometry, wireframeMaterial);
+        const renderer = new THREE.WebGLRenderer({
+            canvas,
+            antialias: true,
+            alpha: true
+        });
+        renderer.setPixelRatio(window.devicePixelRatio || 1);
+        renderer.setSize(window.innerWidth, window.innerHeight);
 
-    scene.add(wireframeSphere);
+        // Soft gradient background sphere
+        const geometry = new THREE.IcosahedronGeometry(1.6, 2);
+        const material = new THREE.MeshStandardMaterial({
+            color: 0x6366f1,
+            emissive: 0x1d4ed8,
+            metalness: 0.6,
+            roughness: 0.25
+        });
+        const blob = new THREE.Mesh(geometry, material);
+        scene.add(blob);
 
-    // Light
-    const light = new THREE.PointLight(0x00ffcc, 1, 100);
-    light.position.set(10, 10, 10);
-    scene.add(light);
+        // Wireframe overlay
+        const wireMaterial = new THREE.MeshBasicMaterial({
+            color: 0xa855f7,
+            wireframe: true,
+            transparent: true,
+            opacity: 0.35
+        });
+        const wireBlob = new THREE.Mesh(geometry, wireMaterial);
+        scene.add(wireBlob);
 
-    camera.position.z = 50;
+        // Lighting
+        const ambient = new THREE.AmbientLight(0xffffff, 0.6);
+        scene.add(ambient);
 
-    // Animation Loop
-    function animate() {
-        requestAnimationFrame(animate);
+        const keyLight = new THREE.PointLight(0x6366f1, 1.2);
+        keyLight.position.set(4, 4, 4);
+        scene.add(keyLight);
 
-        // Rotate Sphere
-        wireframeSphere.rotation.x += 0.01;
-        wireframeSphere.rotation.y += 0.01;
+        const rimLight = new THREE.PointLight(0xa855f7, 1.2);
+        rimLight.position.set(-3, -2, -4);
+        scene.add(rimLight);
 
-        renderer.render(scene, camera);
+        // Animation loop
+        let mouseX = 0, mouseY = 0;
+
+        const onMouseMove = e => {
+            const x = (e.clientX / window.innerWidth) * 2 - 1;
+            const y = -(e.clientY / window.innerHeight) * 2 + 1;
+            mouseX = x * 0.6;
+            mouseY = y * 0.6;
+        };
+
+        window.addEventListener("mousemove", onMouseMove);
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            blob.rotation.x += 0.002;
+            blob.rotation.y += 0.003;
+
+            wireBlob.rotation.x += 0.001;
+            wireBlob.rotation.y += 0.002;
+
+            camera.position.x += (mouseX - camera.position.x) * 0.04;
+            camera.position.y += (mouseY - camera.position.y) * 0.04;
+            camera.lookAt(scene.position);
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Resize
+        window.addEventListener("resize", () => {
+            const w = window.innerWidth;
+            const h = window.innerHeight;
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+        });
     }
-    animate();
 });

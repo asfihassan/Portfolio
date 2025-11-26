@@ -3,173 +3,266 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asfi's Portfolio</title>
+    <title>Asfi Hassan · Portfolio</title>
+
+    <!-- Modern font -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+
+    <!-- three.js for the hero background -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
+    <script defer src="script.js"></script>
 </head>
 <body>
+    <!-- Sticky Header -->
     <header class="header">
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-            <a href="#certifications">Certifications</a>
-            <a href="#resume">Resume</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <div class="header-inner">
+            <a href="#top" class="brand">
+                <div class="brand-mark">AH</div>
+                <span class="brand-text">Asfi Hassan</span>
+            </a>
+            <nav class="nav">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#certifications">Certifications</a>
+                <a href="#resume">Resume</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
-    <main>
+
+    <main id="top">
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-content">
-                <h1 class="fade-text">Welcome to Asfi's Portfolio</h1>
+            <canvas id="3d-animation" aria-hidden="true"></canvas>
+
+            <div class="hero-content fade-text">
+                <p class="hero-eyebrow">Computer Science · University of Windsor</p>
+                <h1>Hi, I'm <span>Asfi</span>.</h1>
+                <p class="hero-subtitle">
+                    I build reliable, user-focused software — from full-stack web apps
+                    to systems programming and data-driven tools.
+                </p>
+                <div class="hero-actions">
+                    <a href="#projects" class="btn primary">View Projects</a>
+                    <a href="resume.pdf" target="_blank" class="btn ghost">Download Resume</a>
+                </div>
+                <div class="hero-meta">
+                    <span>Web Development</span>
+                    <span>Systems Programming</span>
+                    <span>Database Design</span>
+                </div>
             </div>
-            <canvas id="3d-animation"></canvas>
         </section>
 
         <!-- About Section -->
-        <section id="about">
-            <div class="fade-text">
+        <section id="about" class="section">
+            <div class="section-header fade-text">
                 <h2>About Me</h2>
-                <p>I’m a third year student studying Computer Science</p>
-                <p>with honours at University of Windsor. Interested in</p>
-                <p>creating dynamic web applications, solving programming</p>
-                <p>challenges, and designing user-friendly software.</p>
+                <p>A quick snapshot of who I am and what I enjoy building.</p>
+            </div>
+            <div class="about-grid fade-text">
+                <p>
+                    I’m a third-year Computer Science (Honours) student at the
+                    <strong>University of Windsor</strong>, interested in creating
+                    dynamic web applications, solving programming challenges, and
+                    designing intuitive software experiences.
+                </p>
+                <ul class="pill-list">
+                    <li>Java · Python · C</li>
+                    <li>HTML · CSS · JavaScript</li>
+                    <li>SQL · SQLite</li>
+                    <li>Object-Oriented Design</li>
+                    <li>Problem Solving</li>
+                </ul>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects">
-            <div class="fade-text">
+        <section id="projects" class="section">
+            <div class="section-header fade-text">
                 <h2>Projects</h2>
-                <p>Here are some of my recent works and projects.</p>
+                <p>Some things I’ve built and shipped recently.</p>
             </div>
             <div class="project-cards">
-                <div class="card">
+                <article class="card fade-text">
                     <div class="card-content">
                         <h3>Shop westEND</h3>
-                        <p>Created a responsive e-commerce website with secure payments via Stripe, featuring product galleries and seamless checkout.</p>
-                        <a href="https://shopwestend.ca" target="_blank">View Store Page</a>
+                        <p>
+                            Responsive e-commerce storefront with secure Stripe payments,
+                            product galleries, and a smooth checkout experience.
+                        </p>
+                        <div class="card-tags">
+                            <span>JavaScript</span><span>Stripe</span><span>Responsive UI</span>
+                        </div>
+                        <a href="https://shopwestend.ca" target="_blank" class="card-link">
+                            View Store Page
+                        </a>
                     </div>
-                </div>
-                <div class="card">
+                </article>
+
+                <article class="card fade-text">
                     <div class="card-content">
                         <h3>Socket Messaging System</h3>
-                        <p>Built a multithreaded C chat server for real-time messaging with efficient client communication and connection management.</p>
-                        <a href="https://github.com/asfihassan/Socket-Messaging-System" target="_blank">View on GitHub</a>
+                        <p>
+                            Multithreaded C chat server supporting real-time messaging,
+                            efficient client communication, and connection management.
+                        </p>
+                        <div class="card-tags">
+                            <span>C</span><span>Sockets</span><span>Concurrency</span>
+                        </div>
+                        <a href="https://github.com/asfihassan/Socket-Messaging-System" target="_blank" class="card-link">
+                            View on GitHub
+                        </a>
                     </div>
-                </div>
-                <div class="card">
+                </article>
+
+                <article class="card fade-text">
                     <div class="card-content">
                         <h3>Employee Management System</h3>
-                        <p>Developed a Python-based employee management tool with CRUD functionality and a menu-driven interface using SQLite.</p>
-                        <a href="https://github.com/asfihassan/Employee-Management-System" target="_blank">View on GitHub</a>
+                        <p>
+                            Python-based employee management tool with full CRUD operations
+                            and a menu-driven interface backed by SQLite.
+                        </p>
+                        <div class="card-tags">
+                            <span>Python</span><span>SQLite</span><span>CLI</span>
+                        </div>
+                        <a href="https://github.com/asfihassan/Employee-Management-System" target="_blank" class="card-link">
+                            View on GitHub
+                        </a>
                     </div>
-                </div>
-                <div class="card">
+                </article>
+
+                <article class="card fade-text">
                     <div class="card-content">
                         <h3>Expense Tracker</h3>
-                        <p>An Expense Tracker application to manage income, expenses, and categories, providing a clear financial summary.</p>
-                        <a href="https://github.com/asfihassan/Expense-Tracker" target="_blank">View on GitHub</a>
+                        <p>
+                            Application for tracking income and expenses by category,
+                            generating a clear financial overview.
+                        </p>
+                        <div class="card-tags">
+                            <span>Python</span><span>Data Handling</span>
+                        </div>
+                        <a href="https://github.com/asfihassan/Expense-Tracker" target="_blank" class="card-link">
+                            View on GitHub
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Work Experience Section -->
+        <section id="experience" class="section">
+            <div class="section-header fade-text">
+                <h2>Work Experience</h2>
+                <p>Roles that helped me grow as a developer and teammate.</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item fade-text">
+                    <div class="timeline-date">Sep 2025 – Nov 2025</div>
+                    <div class="timeline-content">
+                        <h3>Program Administration Support Clerk</h3>
+                        <p><strong>Ministry of the Solicitor General</strong> · Maidstone, ON</p>
+                        <ul>
+                            <li>Managed information flow, tracked documents, and maintained records with online tools.</li>
+                            <li>Gathered and verified data, liaising with stakeholders for clarification and updates.</li>
+                            <li>Maintained organized filing systems and prepared professional correspondence.</li>
+                            <li>Deployed OS upgrades, provided first-level IT support, and coordinated service desk tickets.</li>
+                            <li>Queried a confidential database to obtain and analyze specific information.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-text">
+                    <div class="timeline-date">Jun 2025 – Aug 2025</div>
+                    <div class="timeline-content">
+                        <h3>Student Office Assistant</h3>
+                        <p><strong>Ministry of the Solicitor General</strong> · Maidstone, ON</p>
+                        <ul>
+                            <li>Prepared correspondence, performed data entry, and created documents and reports.</li>
+                            <li>Supported archival projects using defined rules to store or dispose of files.</li>
+                            <li>Conducted research, performed analysis, and input results into systems.</li>
+                            <li>Upgraded organization computers from Windows 10 to 11 with minimal downtime.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-text">
+                    <div class="timeline-date">Jul 2022 – Dec 2024</div>
+                    <div class="timeline-content">
+                        <h3>Cashier / Team Member</h3>
+                        <p><strong>Little Caesars</strong> · Windsor, ON</p>
+                        <ul>
+                            <li>Delivered fast, friendly customer service during peak hours.</li>
+                            <li>Handled cash and electronic payments with high accuracy.</li>
+                            <li>Assisted with food preparation and inventory restocking.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item fade-text">
+                    <div class="timeline-date">Jul 2021 – Aug 2021</div>
+                    <div class="timeline-content">
+                        <h3>Robotics STEM Volunteer</h3>
+                        <p><strong>Windsor Public Library — John Muir Branch</strong> · Windsor, ON</p>
+                        <ul>
+                            <li>Taught programming concepts using robotics kits for kids.</li>
+                            <li>Designed hands-on activities that introduced logic and engineering basics.</li>
+                            <li>Mentored children during workshops and summer programs.</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-<!-- Work Experience Section -->
-<section id="experience">
-    <div class="fade-text"> 
-        <h2>Work Experience</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">Sep 2025 - Nov 2025</div>
-                <div class="timeline-content">
-                    <h3>Program Administration Support Clerk</h3>
-                    <p><strong>Ministry of the Solicitor General</strong> – Maidstone, ON</p>
-                    <ul>
-                        <li>Oversee the flow of information, track documents and maintain accurate records using online applications.</li>
-                        <li>Gather and verify information, and liaise with appropriate contacts to obtain clarification or share information.</li>
-                        <li>Establish and maintain a filing system.</li>
-                        <li>Prepare a variety of correspondence, including letters, memos, reports, charts, graphs and standing orders.</li>
-                        <li>Proof read documents for accuracy, grammar and formatting.</li>
-                        <li>Deployed software and operating system upgrades across multiple institutional devices, provided first-level IT support for technical issues, and submitted service desk tickets to ensure timely resolution.</li>
-                        <li>Utilized a database (confidential) for purposes of obtaining specific information, and made queries.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">June 2025 - Aug 2025</div>
-                <div class="timeline-content">
-                    <h3>Student Office Assistant</h3>
-                    <p><strong>Ministry of the Solicitor General</strong> – Maidstone, ON</p>
-                    <ul>
-                        <li>Prepared and organize correspondence, perform data entry and word processing functions, and create a variety of documents.</li>
-                        <li>Assisted with small- and/or large-scale archival/filing projects by following a prescribed set of rules to store or destroy files; use technology to file documents.</li>
-                        <li>Conducted research, performed analysis, and input data.</li>
-                        <li>Upgraded many organization computers from Windows 10 to 11, ensuring smooth transitions and system compatibility.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">July 2022 - Dec 2024</div>
-                <div class="timeline-content">
-                    <h3>Cashier / Team Member</h3>
-                    <p><strong>Little Caesars</strong> – Windsor, ON</p>
-                    <ul>
-                        <li>Provided fast and friendly customer service during peak hours.</li>
-                        <li>Managed cash register, handled transactions and ensured accurate billing.</li>
-                        <li>Assisted in food preparation and inventory restocking.</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">July 2021 – Aug. 2021</div>
-                <div class="timeline-content">
-                    <h3>Robotics STEM Volunteer</h3>
-                    <p><strong>Windsor Public Library John Muir Branch</strong> – Windsor, ON</p>
-                    <ul>
-                        <li>Taught kids programming concepts using robotics kits.</li>
-                        <li>Created fun hands-on activities to teach logic and engineering basics.</li>
-                        <li>Mentored children at workshops and summer programs.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
         <!-- Certifications Section -->
-        <section id="certifications">
-            <div class="fade-text">
+        <section id="certifications" class="section">
+            <div class="section-header fade-text">
                 <h2>Certifications</h2>
-                <p>Here are some of my professional certifications:</p>
-                <p>
-                    <a href="cybrary-cert-cissp.pdf" target="_blank">Certificate of Continuing Education Completion (PDF)</a>
-                </p>
-                <p>
-                    <a href="certificate_of_completion_java.pdf" target="_blank">W3S Java Developer Certification (PDF)</a>
-                </p>
-                <p>
-                    <a href="certificate_of_completion_python.pdf" target="_blank">W3S Python Developer Certification (PDF)</a>
-                </p>
+                <p>Credentials that reflect my learning and interests.</p>
+            </div>
+            <div class="cert-grid fade-text">
+                <a href="cybrary-cert-cissp.pdf" target="_blank" class="cert-card">
+                    <h3>Certificate of Continuing Education</h3>
+                    <p>Cybrary · CISSP Content</p>
+                </a>
+                <a href="certificate_of_completion_java.pdf" target="_blank" class="cert-card">
+                    <h3>Java Developer Certification</h3>
+                    <p>W3Schools</p>
+                </a>
+                <a href="certificate_of_completion_python.pdf" target="_blank" class="cert-card">
+                    <h3>Python Developer Certification</h3>
+                    <p>W3Schools</p>
+                </a>
             </div>
         </section>
 
         <!-- Resume Section -->
-        <section id="resume">
-            <div class="fade-text">
+        <section id="resume" class="section">
+            <div class="section-header fade-text">
                 <h2>Resume</h2>
-                <p>View or download my professional resume:</p>
-                <a href="resume.pdf" target="_blank" class="resume-link">Download Resume (PDF)</a>
+                <p>Want a quick snapshot? Grab the PDF version.</p>
+            </div>
+            <div class="fade-text">
+                <a href="resume.pdf" target="_blank" class="btn primary">
+                    Download Resume (PDF)
+                </a>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <div class="fade-text">
+        <section id="contact" class="section">
+            <div class="section-header fade-text">
                 <h2>Contact Me</h2>
-                <p>Let’s develop something amazing together. Reach out and feel free to check my GitHub!</p>
+                <p>Let’s build something great together. My inbox is always open.</p>
+            </div>
+            <div class="contact-grid fade-text">
+                <div>
+                    <p>Email me directly or connect through any of these platforms:</p>
+                </div>
                 <div class="contact-icons">
                     <a href="https://github.com/asfihassan" target="_blank">
                         <img src="github.png" alt="GitHub" title="GitHub">
@@ -186,8 +279,8 @@
     </main>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2025 Asfi's Portfolio. All rights reserved.</p>
+    <footer class="footer">
+        <p>© 2025 Asfi Hassan. All rights reserved.</p>
     </footer>
 </body>
 </html>
