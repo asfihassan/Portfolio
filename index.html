@@ -5,17 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asfi Hassan · Portfolio</title>
 
-    <!-- Modern font -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="styles.css">
 
-    <!-- three.js for the hero background -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Sticky Header -->
     <header class="header">
         <div class="header-inner">
             <a href="#top" class="brand">
@@ -26,7 +22,8 @@
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
-                <a href="#certifications">Certifications</a>
+                <a href="#education">Education</a>
+                <a href="#endorsements">Endorsements</a>
                 <a href="#resume">Resume</a>
                 <a href="#contact">Contact</a>
             </nav>
@@ -34,7 +31,6 @@
     </header>
 
     <main id="top">
-        <!-- Hero Section -->
         <section class="hero">
             <canvas id="3d-animation" aria-hidden="true"></canvas>
 
@@ -48,7 +44,6 @@
                 <div class="hero-actions">
                     <a href="#projects" class="btn primary">View Projects</a>
                     <a href="resume.pdf" target="_blank" class="btn ghost">Download Resume</a>
-                    <a href="Memo - Thank you - SEO Summer Student Office Assistant - 28-Aug-25.pdf" target="_blank" class="btn ghost">Ministry Memo</a>
                 </div>
                 <div class="hero-meta">
                     <span>Web Development</span>
@@ -60,7 +55,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="section">
             <div class="section-header fade-text">
                 <h2>About Me</h2>
@@ -83,129 +77,119 @@
             </div>
         </section>
 
-        <!-- Projects Section -->
-<section id="projects" class="section">
-    <div class="section-header fade-text">
-        <h2>Projects</h2>
-        <p>Some things I’ve built and shipped recently.</p>
-    </div>
+        <section id="projects" class="section">
+            <div class="section-header fade-text">
+                <h2>Projects</h2>
+                <p>Some things I’ve built and shipped recently.</p>
+            </div>
 
-    <div class="project-cards">
-
-        <!-- Software Engineering Final -->
-        <div class="project-item fade-text">
-            <article class="card">
-                <div class="card-content">
-                    <h3>File Mapping Dataset · Software Engineering Final</h3>
-                    <p>
-                        Python-based analysis tool that maps file changes across Git commits,
-                        generating an XML/CSV dataset for visualizing code evolution and
-                        supporting team metrics in COMP-3110.
-                    </p>
-                    <div class="card-tags">
-                        <span>Python</span><span>Git</span><span>Data Analysis</span>
+            <div class="project-cards">
+                <div class="project-item fade-text">
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>File Mapping Dataset · Software Engineering Final</h3>
+                            <p>
+                                Python-based analysis tool that maps file changes across Git commits,
+                                generating an XML/CSV dataset for visualizing code evolution and
+                                supporting team metrics in COMP-3110.
+                            </p>
+                            <div class="card-tags">
+                                <span>Python</span><span>Git</span><span>Data Analysis</span>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="card-links">
+                        <a href="https://github.com/asfihassan/3110-Project-Repo" target="_blank" class="btn project-btn ghost">
+                            View on GitHub
+                        </a>
+                        <a href="report.pdf" target="_blank" class="btn project-btn ghost">
+                            View Project Report (PDF)
+                        </a>
                     </div>
                 </div>
-            </article>
-            <div class="card-links">
-                <a href="https://github.com/asfihassan/3110-Project-Repo" target="_blank" class="btn project-btn ghost">
-                    View on GitHub
-                </a>
-                <a href="report.pdf" target="_blank" class="btn project-btn ghost">
-                    View Project Report (PDF)
-                </a>
-            </div>
-        </div>
 
-        <!-- Shop westEND -->
-        <div class="project-item fade-text">
-            <article class="card">
-                <div class="card-content">
-                    <h3>Shop westEND</h3>
-                    <p>
-                        Responsive e-commerce storefront with secure Stripe payments,
-                        product galleries, and a smooth checkout experience.
-                    </p>
-                    <div class="card-tags">
-                        <span>JavaScript</span><span>Stripe</span><span>Responsive UI</span>
+                <div class="project-item fade-text">
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Shop westEND</h3>
+                            <p>
+                                Responsive e-commerce storefront with secure Stripe payments,
+                                product galleries, and a smooth checkout experience.
+                            </p>
+                            <div class="card-tags">
+                                <span>JavaScript</span><span>Stripe</span><span>Responsive UI</span>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="card-links">
+                        <a href="https://shopwestend.ca" target="_blank" class="btn project-btn ghost">
+                            View Store Page
+                        </a>
                     </div>
                 </div>
-            </article>
-            <div class="card-links">
-                <a href="https://shopwestend.ca" target="_blank" class="btn project-btn ghost">
-                    View Store Page
-                </a>
-            </div>
-        </div>
 
-        <!-- Socket Messaging System -->
-        <div class="project-item fade-text">
-            <article class="card">
-                <div class="card-content">
-                    <h3>Socket Messaging System</h3>
-                    <p>
-                        Multithreaded C chat server supporting real-time messaging,
-                        efficient client communication, and connection management.
-                    </p>
-                    <div class="card-tags">
-                        <span>C</span><span>Sockets</span><span>Concurrency</span>
+                <div class="project-item fade-text">
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Socket Messaging System</h3>
+                            <p>
+                                Multithreaded C chat server supporting real-time messaging,
+                                efficient client communication, and connection management.
+                            </p>
+                            <div class="card-tags">
+                                <span>C</span><span>Sockets</span><span>Concurrency</span>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="card-links">
+                        <a href="https://github.com/asfihassan/Socket-Messaging-System" target="_blank" class="btn project-btn ghost">
+                            View on GitHub
+                        </a>
                     </div>
                 </div>
-            </article>
-            <div class="card-links">
-                <a href="https://github.com/asfihassan/Socket-Messaging-System" target="_blank" class="btn project-btn ghost">
-                    View on GitHub
-                </a>
-            </div>
-        </div>
 
-        <!-- Employee Management System -->
-        <div class="project-item fade-text">
-            <article class="card">
-                <div class="card-content">
-                    <h3>Employee Management System</h3>
-                    <p>
-                        Python-based employee management tool with full CRUD operations
-                        and a menu-driven interface backed by SQLite.
-                    </p>
-                    <div class="card-tags">
-                        <span>Python</span><span>SQLite</span><span>CLI</span>
+                <div class="project-item fade-text">
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Employee Management System</h3>
+                            <p>
+                                Python-based employee management tool with full CRUD operations
+                                and a menu-driven interface backed by SQLite.
+                            </p>
+                            <div class="card-tags">
+                                <span>Python</span><span>SQLite</span><span>CLI</span>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="card-links">
+                        <a href="https://github.com/asfihassan/Employee-Management-System" target="_blank" class="btn project-btn ghost">
+                            View on GitHub
+                        </a>
                     </div>
                 </div>
-            </article>
-            <div class="card-links">
-                <a href="https://github.com/asfihassan/Employee-Management-System" target="_blank" class="btn project-btn ghost">
-                    View on GitHub
-                </a>
-            </div>
-        </div>
 
-        <!-- Expense Tracker -->
-        <div class="project-item fade-text">
-            <article class="card">
-                <div class="card-content">
-                    <h3>Expense Tracker</h3>
-                    <p>
-                        Application for tracking income and expenses by category,
-                        generating a clear financial overview.
-                    </p>
-                    <div class="card-tags">
-                        <span>Python</span><span>Data Handling</span>
+                <div class="project-item fade-text">
+                    <article class="card">
+                        <div class="card-content">
+                            <h3>Expense Tracker</h3>
+                            <p>
+                                Application for tracking income and expenses by category,
+                                generating a clear financial overview.
+                            </p>
+                            <div class="card-tags">
+                                <span>Python</span><span>Data Handling</span>
+                            </div>
+                        </div>
+                    </article>
+                    <div class="card-links">
+                        <a href="https://github.com/asfihassan/Expense-Tracker" target="_blank" class="btn project-btn ghost">
+                            View on GitHub
+                        </a>
                     </div>
                 </div>
-            </article>
-            <div class="card-links">
-                <a href="https://github.com/asfihassan/Expense-Tracker" target="_blank" class="btn project-btn ghost">
-                    View on GitHub
-                </a>
             </div>
-        </div>
+        </section>
 
-    </div>
-</section>
-
-
-        <!-- Work Experience Section -->
         <section id="experience" class="section">
             <div class="section-header fade-text">
                 <h2>Work Experience</h2>
@@ -270,25 +254,29 @@
             </div>
         </section>
 
-        <!-- Certifications Section -->
-        <section id="certifications" class="section">
+        <section id="education" class="section">
             <div class="section-header fade-text">
-                <h2>Certifications and Appreciation</h2>
-                <p>Credentials that reflect my learning and interests. Appreciation, recommendation, and awards.</p>
+                <h2>Education</h2>
+                <p>Academic background and formal training.</p>
             </div>
+
             <div class="cert-grid fade-text">
-                <a href="Memo - Thank you - SEO Summer Student Office Assistant - 28-Aug-25.pdf" target="_blank" class="cert-card">
-                    <h3>Appreciation Memo</h3>
-                    <p>Ministry of the Solicitor General - SWDC Administration</p>
-                </a>
+                <div class="cert-card">
+                    <h3>University of Windsor</h3>
+                    <p>Bachelor of Computer Science (Honours)</p>
+                    <p><strong>Expected Graduation:</strong> 2027</p>
+                </div>
+
                 <a href="cybrary-cert-cissp.pdf" target="_blank" class="cert-card">
                     <h3>Certificate of Continuing Education</h3>
                     <p>Cybrary · CISSP Content</p>
                 </a>
+
                 <a href="certificate_of_completion_java.pdf" target="_blank" class="cert-card">
                     <h3>Java Developer Certification</h3>
                     <p>W3Schools</p>
                 </a>
+
                 <a href="certificate_of_completion_python.pdf" target="_blank" class="cert-card">
                     <h3>Python Developer Certification</h3>
                     <p>W3Schools</p>
@@ -296,7 +284,26 @@
             </div>
         </section>
 
-        <!-- Resume Section -->
+<section id="endorsements" class="section">
+    <div class="section-header fade-text">
+        <h2>Endorsements</h2>
+        <p>Official letters and documents that speak to my credibility and performance.</p>
+    </div>
+
+    <div class="cert-grid fade-text">
+        <a href="Memo - Thank you - SEO Summer Student Office Assistant - 28-Aug-25.pdf" target="_blank" class="cert-card">
+            <h3>Letter of Appreciation</h3>
+            <p>Ministry of the Solicitor General · SWDC Administration</p>
+        </a>
+
+        <a href="Reference Letter Ryan.pdf" target="_blank" class="cert-card">
+            <h3>Reference Letter</h3>
+            <p>Professional Supervisor</p>
+        </a>
+    </div>
+</section>
+
+
         <section id="resume" class="section">
             <div class="section-header fade-text">
                 <h2>Resume</h2>
@@ -309,7 +316,6 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
         <section id="contact" class="section">
             <div class="section-header fade-text">
                 <h2>Contact Me</h2>
@@ -334,7 +340,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="footer">
         <p>© 2026 Asfi Hassan. All rights reserved.</p>
     </footer>
