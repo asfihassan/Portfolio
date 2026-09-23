@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Asfi Hassan · Portfolio</title>
+    <meta name="description" content="Asfi Hassan, Computer Science (Honours) student at the University of Windsor. Projects, experience, research papers and resume.">
+    <meta name="theme-color" content="#ECEFF4">
 
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=STIX+Two+Text:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.min.js"></script>
     <script defer src="script.js"></script>
 </head>
 <body>
+    <a class="skip-link" href="#about">Skip to content</a>
+
     <header class="header">
         <div class="header-inner">
             <a href="#top" class="brand">
                 <div class="brand-mark">AH</div>
                 <span class="brand-text">Asfi Hassan</span>
             </a>
-            <nav class="nav">
+            <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+                <span class="nav-toggle-icon" aria-hidden="true"></span>
+                <span class="nav-toggle-label">Menu</span>
+            </button>
+            <nav class="nav" id="site-nav" aria-label="Main">
                 <a href="#about">About</a>
                 <a href="#projects">Projects</a>
                 <a href="#experience">Experience</a>
@@ -33,9 +43,7 @@
 
     <main id="top">
         <section class="hero">
-            <canvas id="3d-animation" aria-hidden="true"></canvas>
-
-            <div class="hero-content fade-text">
+            <div class="hero-content">
                 <p class="hero-eyebrow">Computer Science · University of Windsor</p>
                 <h1>Hi, I'm <span>Asfi</span>.</h1>
                 <p class="hero-subtitle">
@@ -44,25 +52,48 @@
                 </p>
                 <div class="hero-actions">
                     <a href="#projects" class="btn primary">View Projects</a>
-                    <a href="resume.pdf" target="_blank" class="btn ghost">Download Resume</a>
+                    <a href="resume.pdf" target="_blank" rel="noopener" class="btn ghost">Download Resume</a>
                 </div>
-                <div class="hero-meta">
-                    <span>Web Development</span>
-                    <span>Systems Programming</span>
-                    <span>Database Design</span>
-                    <span>Software Development</span>
-                    <span>AI</span>
-                </div>
+                <ul class="hero-meta">
+                    <li>Web Development</li>
+                    <li>Systems Programming</li>
+                    <li>Database Design</li>
+                    <li>Software Development</li>
+                    <li>AI</li>
+                </ul>
             </div>
+
+            <figure class="hero-figure">
+                <div class="figure-stage">
+                    <canvas id="3d-animation" aria-hidden="true"></canvas>
+                </div>
+                <figcaption>
+                    <p>
+                        <span class="fig-label">Fig. 1.</span>
+                        Five runners circle a track at speeds 1, 3, 4, 7 and 8 while a sixth
+                        waits at the start. It is lonely, and its zone lights up, whenever every
+                        other runner is at least 1/6 of a lap away. The Lonely Runner Conjecture
+                        says this always happens, whatever the speeds. It was the focus of my
+                        <a href="#papers">NSERC research</a>.
+                    </p>
+                    <div class="figure-controls">
+                        <p class="figure-status" id="runner-status">
+                            <span class="status-t"><i>t</i> = 0.00</span>
+                            <span class="status-text">All runners at the start</span>
+                        </p>
+                        <button type="button" class="figure-toggle" id="figure-toggle">Pause</button>
+                    </div>
+                </figcaption>
+            </figure>
         </section>
 
         <section id="about" class="section">
-            <div class="section-header fade-text">
+            <div class="section-header">
                 <h2>About Me</h2>
                 <p>A quick snapshot of who I am and what I enjoy building.</p>
             </div>
-            <div class="about-grid fade-text">
-                <p>
+            <div class="about-grid">
+                <p class="about-lead">
                     I’m a fourth-year Computer Science (Honours) student at the
                     <strong>University of Windsor</strong>, interested in creating
                     dynamic web applications, solving programming challenges, and
@@ -79,13 +110,13 @@
         </section>
 
         <section id="projects" class="section">
-            <div class="section-header fade-text">
+            <div class="section-header">
                 <h2>Projects</h2>
                 <p>Some things I’ve built and shipped recently.</p>
             </div>
 
             <div class="project-cards">
-                <div class="project-item fade-text">
+                <div class="project-item">
                     <article class="card">
                         <div class="card-content">
                             <h3>File Mapping Dataset · Software Engineering Final</h3>
@@ -100,16 +131,16 @@
                         </div>
                     </article>
                     <div class="card-links">
-                        <a href="https://github.com/asfihassan/3110-Project-Repo" target="_blank" class="btn project-btn ghost">
+                        <a href="https://github.com/asfihassan/3110-Project-Repo" target="_blank" rel="noopener" class="btn project-btn ghost">
                             View on GitHub
                         </a>
-                        <a href="report.pdf" target="_blank" class="btn project-btn ghost">
+                        <a href="report.pdf" target="_blank" rel="noopener" class="btn project-btn ghost">
                             View Project Report (PDF)
                         </a>
                     </div>
                 </div>
 
-                <div class="project-item fade-text">
+                <div class="project-item">
                     <article class="card">
                         <div class="card-content">
                             <h3>Shop westEND</h3>
@@ -123,13 +154,13 @@
                         </div>
                     </article>
                     <div class="card-links">
-                        <a href="https://shopwestend.ca" target="_blank" class="btn project-btn ghost">
+                        <a href="https://shopwestend.ca" target="_blank" rel="noopener" class="btn project-btn ghost">
                             View Store Page
                         </a>
                     </div>
                 </div>
 
-                <div class="project-item fade-text">
+                <div class="project-item">
                     <article class="card">
                         <div class="card-content">
                             <h3>Socket Messaging System</h3>
@@ -143,13 +174,13 @@
                         </div>
                     </article>
                     <div class="card-links">
-                        <a href="https://github.com/asfihassan/Socket-Messaging-System" target="_blank" class="btn project-btn ghost">
+                        <a href="https://github.com/asfihassan/Socket-Messaging-System" target="_blank" rel="noopener" class="btn project-btn ghost">
                             View on GitHub
                         </a>
                     </div>
                 </div>
 
-                <div class="project-item fade-text">
+                <div class="project-item">
                     <article class="card">
                         <div class="card-content">
                             <h3>Employee Management System</h3>
@@ -163,13 +194,13 @@
                         </div>
                     </article>
                     <div class="card-links">
-                        <a href="https://github.com/asfihassan/Employee-Management-System" target="_blank" class="btn project-btn ghost">
+                        <a href="https://github.com/asfihassan/Employee-Management-System" target="_blank" rel="noopener" class="btn project-btn ghost">
                             View on GitHub
                         </a>
                     </div>
                 </div>
 
-                <div class="project-item fade-text">
+                <div class="project-item">
                     <article class="card">
                         <div class="card-content">
                             <h3>Expense Tracker</h3>
@@ -183,7 +214,7 @@
                         </div>
                     </article>
                     <div class="card-links">
-                        <a href="https://github.com/asfihassan/Expense-Tracker" target="_blank" class="btn project-btn ghost">
+                        <a href="https://github.com/asfihassan/Expense-Tracker" target="_blank" rel="noopener" class="btn project-btn ghost">
                             View on GitHub
                         </a>
                     </div>
@@ -192,29 +223,28 @@
         </section>
 
         <section id="experience" class="section">
-            <div class="section-header fade-text">
+            <div class="section-header">
                 <h2>Work Experience</h2>
                 <p>Roles that helped me grow as a developer and teammate.</p>
             </div>
 
             <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">May 2026 – Aug 2026</div>
+                    <div class="timeline-content">
+                        <h3>NSERC Undergraduate Researcher (Software Development)</h3>
+                        <p><strong>University of Windsor</strong> · Windsor, ON</p>
+                        <ul>
+                            <li>Selected for the NSERC Undergraduate Student Research Award to conduct research in computational geometry under Dr. Ahmed Biniaz.</li>
+                            <li>Developed a Python software tool with a Tkinter and Matplotlib GUI to visualize geometric constructions and algorithm behavior.</li>
+                            <li>Implemented algorithms that generate triangle-based geometric structures from dynamic user inputs for experimentation and analysis.</li>
+                            <li>Designed modular, scalable code to support testing, visualization, and evaluation of geometric algorithms.</li>
+                            <li>Collaborated with a research team to refine implementations and document experimental results.</li>
+                        </ul>
+                    </div>
+                </div>
 
-                <div class="timeline-item fade-text">
-    <div class="timeline-date">May 2026 – Aug 2026</div>
-    <div class="timeline-content">
-        <h3>NSERC Undergraduate Researcher (Software Development)</h3>
-        <p><strong>University of Windsor</strong> · Windsor, ON</p>
-        <ul>
-            <li>Selected for the NSERC Undergraduate Student Research Award to conduct research in computational geometry under Dr. Ahmed Biniaz.</li>
-            <li>Developed a Python software tool with a Tkinter and Matplotlib GUI to visualize geometric constructions and algorithm behavior.</li>
-            <li>Implemented algorithms that generate triangle-based geometric structures from dynamic user inputs for experimentation and analysis.</li>
-            <li>Designed modular, scalable code to support testing, visualization, and evaluation of geometric algorithms.</li>
-            <li>Collaborated with a research team to refine implementations and document experimental results.</li>
-        </ul>
-    </div>
-</div>
-
-                <div class="timeline-item fade-text">
+                <div class="timeline-item">
                     <div class="timeline-date">Sep 2025 – Dec 2025</div>
                     <div class="timeline-content">
                         <h3>Program Administration Support Clerk</h3>
@@ -229,7 +259,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item fade-text">
+                <div class="timeline-item">
                     <div class="timeline-date">Jun 2025 – Aug 2025</div>
                     <div class="timeline-content">
                         <h3>Student Office Assistant</h3>
@@ -243,7 +273,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item fade-text">
+                <div class="timeline-item">
                     <div class="timeline-date">Jul 2022 – Dec 2024</div>
                     <div class="timeline-content">
                         <h3>Cashier / Team Member</h3>
@@ -256,7 +286,7 @@
                     </div>
                 </div>
 
-                <div class="timeline-item fade-text">
+                <div class="timeline-item">
                     <div class="timeline-date">Jul 2021 – Aug 2021</div>
                     <div class="timeline-content">
                         <h3>Robotics STEM Volunteer</h3>
@@ -272,111 +302,112 @@
         </section>
 
         <section id="education" class="section">
-            <div class="section-header fade-text">
+            <div class="section-header">
                 <h2>Education</h2>
                 <p>Academic background and formal training.</p>
             </div>
 
-            <div class="cert-grid fade-text">
-                <div class="cert-card">
+            <div class="cert-grid">
+                <div class="cert-card cert-card--degree">
                     <h3>University of Windsor</h3>
                     <p>Bachelor of Computer Science (Honours)</p>
                     <p><strong>Expected Graduation:</strong> 2027</p>
                 </div>
 
-                <a href="cybrary-cert-cissp.pdf" target="_blank" class="cert-card">
-                    <h3>Certificate of Continuing Education</h3>
+                <a href="cybrary-cert-cissp.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">Certificate of Continuing Education</span></h3>
                     <p>Cybrary · CISSP Content</p>
                 </a>
 
-                <a href="certificate_of_completion_java.pdf" target="_blank" class="cert-card">
-                    <h3>Java Developer Certification</h3>
+                <a href="certificate_of_completion_java.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">Java Developer Certification</span></h3>
                     <p>W3Schools</p>
                 </a>
 
-                <a href="certificate_of_completion_python.pdf" target="_blank" class="cert-card">
-                    <h3>Python Developer Certification</h3>
+                <a href="certificate_of_completion_python.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">Python Developer Certification</span></h3>
                     <p>W3Schools</p>
                 </a>
             </div>
         </section>
 
-<section id="endorsements" class="section">
-    <div class="section-header fade-text">
-        <h2>Endorsements</h2>
-        <p>Official letters and documents that speak to my credibility and performance.</p>
-    </div>
+        <section id="endorsements" class="section">
+            <div class="section-header">
+                <h2>Endorsements</h2>
+                <p>Official letters and documents that speak to my credibility and performance.</p>
+            </div>
 
-    <div class="cert-grid fade-text">
-        <a href="Memo - Thank you - SEO Summer Student Office Assistant - 28-Aug-25_redacted.pdf" target="_blank" class="cert-card">
-            <h3>Letter of Appreciation</h3>
-            <p>Ministry of the Solicitor General · SWDC Administration</p>
-        </a>
+            <div class="cert-grid">
+                <a href="Memo - Thank you - SEO Summer Student Office Assistant - 28-Aug-25_redacted.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">Letter of Appreciation</span></h3>
+                    <p>Ministry of the Solicitor General · SWDC Administration</p>
+                </a>
 
-        <a href="Reference Letter Ryan.pdf" target="_blank" class="cert-card">
-            <h3>Reference Letter</h3>
-            <p>Professional Supervisor</p>
-        </a>
-    </div>
-</section>
+                <a href="Reference Letter Ryan.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">Reference Letter</span></h3>
+                    <p>Professional Supervisor</p>
+                </a>
+            </div>
+        </section>
 
-<!-- Add this section after the Endorsements section and before the Resume section -->
-<section id="papers" class="section">
-    <div class="section-header fade-text">
-        <h2>Papers</h2>
-        <p>Research papers, technical reports, and academic documents/journals.</p>
-    </div>
+        <section id="papers" class="section">
+            <div class="section-header">
+                <h2>Papers</h2>
+                <p>Research papers, technical reports, and academic documents/journals.</p>
+            </div>
 
-    <div class="cert-grid fade-text">
-        <a href="report.pdf" target="_blank" class="cert-card">
-            <h3>File Mapping Software Design Document</h3>
-            <p>COMP-3110 Software Engineering Final Report</p>
-        </a>
+            <div class="cert-grid cert-grid--refs">
+                <a href="report.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">File Mapping Software Design Document</span></h3>
+                    <p>COMP-3110 Software Engineering Final Report</p>
+                </a>
 
-        <a href="usra-journal.pdf" target="_blank" class="cert-card">
-            <h3>USRA Lonely Runner Research Journal</h3>
-            <p>NSERC Undergraduate Student Research Award, Computational Geometry, Number Theory, Discrete Mathematics</p>
-        </a>
+                <a href="usra-journal.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">USRA Lonely Runner Research Journal</span></h3>
+                    <p>NSERC Undergraduate Student Research Award, Computational Geometry, Number Theory, Discrete Mathematics</p>
+                </a>
 
-
-         <a href="Survey_Paper_USRA.pdf" target="_blank" class="cert-card">
-            <h3>USRA Survey Draft Paper</h3>
-            <p>A Geometric and Computational Study of the Lonely Runner Conjecture for Speed Sets with v1 = 1 and vn ≤ 2n</p>
-        </a>
-    </div>
-</section>
-
+                <a href="Survey_Paper_USRA.pdf" target="_blank" rel="noopener" class="cert-card">
+                    <h3><span class="hl">USRA Survey Draft Paper</span></h3>
+                    <p>A Geometric and Computational Study of the Lonely Runner Conjecture for Speed Sets with <i>v</i><sub>1</sub> = 1 and <i>v</i><sub><i>n</i></sub> ≤ 2<i>n</i></p>
+                </a>
+            </div>
+        </section>
 
         <section id="resume" class="section">
-            <div class="section-header fade-text">
+            <div class="section-header">
                 <h2>Resume</h2>
                 <p>Want a quick snapshot? Grab the PDF version.</p>
             </div>
-            <div class="fade-text">
-                <a href="resume.pdf" target="_blank" class="btn primary">
+            <div class="resume-body">
+                <a href="resume.pdf" target="_blank" rel="noopener" class="btn primary">
                     Download Resume (PDF)
                 </a>
             </div>
         </section>
 
         <section id="contact" class="section">
-            <div class="section-header fade-text">
+            <div class="section-header">
                 <h2>Contact Me</h2>
                 <p>Let’s build something great together. My inbox is always open.</p>
             </div>
-            <div class="contact-grid fade-text">
-                <div>
-                    <p>Email me directly or connect through any of these platforms:</p>
-                </div>
+            <div class="contact-grid">
+                <p>Email me directly or connect through any of these platforms:</p>
                 <div class="contact-icons">
-                    <a href="https://github.com/asfihassan" target="_blank">
-                        <img src="github.png" alt="GitHub" title="GitHub">
+                    <a href="https://github.com/asfihassan" target="_blank" rel="noopener" class="contact-link">
+                        <img src="github.png" alt="" title="GitHub">
+                        <span class="contact-name">GitHub</span>
+                        <span class="contact-handle">github.com/asfihassan</span>
                     </a>
-                    <a href="mailto:asfihassan2005@gmail.com">
-                        <img src="gmail.png" alt="Professional Email" title="Professional Email">
+                    <a href="mailto:asfihassan2005@gmail.com" class="contact-link">
+                        <img src="gmail.png" alt="" title="Professional Email">
+                        <span class="contact-name">Professional Email</span>
+                        <span class="contact-handle">asfihassan2005@gmail.com</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/asfih/" target="_blank">
-                        <img src="linkedin.png" alt="LinkedIn" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/asfih/" target="_blank" rel="noopener" class="contact-link">
+                        <img src="linkedin.png" alt="" title="LinkedIn">
+                        <span class="contact-name">LinkedIn</span>
+                        <span class="contact-handle">linkedin.com/in/asfih</span>
                     </a>
                 </div>
             </div>
